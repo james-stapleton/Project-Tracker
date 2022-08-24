@@ -37,12 +37,14 @@ function handleProjectFormSubmit(event) {
 
 }
 
-addProject.on('click', function () {
-
-  
-
+// modal pop-up
+function projectModal(){
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
 }
-);
+
+addProjectBtn.on('click', projectModal);
 
 projectFormEl.on('submit', handleProjectFormSubmit);
 projectDisplayEl.on('click', '.delete-project-btn', handleDeleteProject);
